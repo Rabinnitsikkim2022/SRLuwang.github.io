@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact – Salam Rabindrajit Luwang</title>
+<meta name="description" content="Get in touch with Salam Rabindrajit Luwang.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="masthead">
+  <div class="masthead-inner">
+    <a class="site-title" href="index.html">Salam Rabindrajit Luwang</a>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="publications.html">Publications</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</div>
+
+<main>
+  <h1>Get in touch</h1>
+  <section>
+    <p>
+      If you have questions about my work, see a way to collaborate, or just want to
+      say hi, please reach out. You can email me directly at
+      <!-- EDIT: your preferred email -->
+      <a href="mailto:salamrabindrajit@gmail.com">salamrabindrajit@gmail.com</a>,
+      or use the form below.
+    </p>
+
+    <div class="field">
+      <label for="cname">Name</label>
+      <input id="cname" type="text" placeholder="Your name">
+    </div>
+    <div class="field">
+      <label for="cemail">Email</label>
+      <input id="cemail" type="email" placeholder="you@example.com">
+    </div>
+    <div class="field">
+      <label for="cmsg">Message</label>
+      <textarea id="cmsg" placeholder="Your message"></textarea>
+    </div>
+    <button class="btn" onclick="sendMail()">Send</button>
+
+    <p class="find" style="margin-top:30px">
+      <strong>Elsewhere:</strong><br>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a><span class="dot">&bull;</span>
+      <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a><span class="dot">&bull;</span>
+      <a href="https://arxiv.org/a/luwang_s_1" target="_blank" rel="noopener">arXiv</a><span class="dot">&bull;</span>
+      <a href="https://www.researchgate.net/profile/Salam-Rabindrajit-Luwang" target="_blank" rel="noopener">ResearchGate</a>
+    </p>
+  </section>
+</main>
+
+<footer><div class="footer-inner">&copy; <span class="yr"></span> Salam Rabindrajit Luwang</div></footer>
+<script>
+  document.querySelectorAll('.yr').forEach(function(e){e.textContent=new Date().getFullYear()});
+  function sendMail(){
+    var to='salamrabindrajit@gmail.com';  // EDIT
+    var name=encodeURIComponent(document.getElementById('cname').value||'');
+    var email=encodeURIComponent(document.getElementById('cemail').value||'');
+    var msg=encodeURIComponent(document.getElementById('cmsg').value||'');
+    var body='Name: '+name+'%0D%0AEmail: '+email+'%0D%0A%0D%0A'+msg;
+    window.location.href='mailto:'+to+'?subject=Message from your homepage&body='+body;
+  }
+</script>
+</body>
+</html>
